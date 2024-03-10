@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+}
+h1 {
+  color: black;
+  margin-left: 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+label{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
