@@ -3,8 +3,7 @@
   src: url('fonts/Montserrat-Regular.ttf') format('truetype');
 }
 
-
-#instruction_container {
+#instruction_container, #instruction_button_container {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 16px;
@@ -50,4 +49,31 @@ label{
 
 #submit_form {
   margin-top: 10pt;
+}
+
+#progress_bar{
+  margin-top: 20px;
+  width: 50%;
+  border: solid 1px black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#progress_filler{
+  justify-content: left;
+  padding-left: 10px;
+  background-color: skyblue;
+  display: flex;
+}
+
+#game_answer_buttons_container{
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#image_container{
+  display: flex;
+  justify-content: center;
 }

@@ -5,11 +5,12 @@ addEventListener("submit", (event) => {
 
     //Если одно из значений не заполнено
     if (name === "" || gender === "" || age === ""){
-        console.log("some of values is null")
+        console.log("some of values is null") //DEBUG STRING, DELETE
     }
     //иначе мы заносим все значения в localStorage и перебрасываем на страницу с игрой.
     else {
-        console.log("all values given")
+        console.log("all values given") //DEBUG STRING, DELETE
+
         localStorage.setItem("name",name)
         localStorage.setItem("gender",gender)
         localStorage.setItem("age",age)
