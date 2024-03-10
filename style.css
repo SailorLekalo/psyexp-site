@@ -2,6 +2,26 @@
   font-family: 'Montserrat';
   src: url('fonts/Montserrat-Regular.ttf') format('truetype');
 }
+
+
+#instruction_container {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 16px;
+  justify-content: center;
+  display: flex;
+}
+@media (max-width: 500px){
+  #instruction_container {
+    font-size: 3vmin;
+  }
+}
+
+#instruction{
+  width: 80%;
+  max-width: 800px;
+}
+
 h1 {
   color: black;
   font-size: 20pt;
@@ -26,4 +46,8 @@ label{
   justify-content: center;
   text-align: center  ;
   display: flex;
+}
+
+#submit_form {
+  margin-top: 10pt;
 }
