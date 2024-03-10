@@ -4,7 +4,7 @@
 }
 
 
-#instructionContainer {
+#instruction_container {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 16px;
@@ -42,12 +42,12 @@ label{
   text-align: center;
 }
 
-#formContainer{
+#form_container{
   justify-content: center;
   text-align: center  ;
   display: flex;
 }
 
-#submitForm {
+#submit_form {
   margin-top: 10pt;
 }

@@ -1,3 +1,1 @@
-function changeInstructionState(){
-
-}
+function change_instruction(){}
