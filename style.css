@@ -4,11 +4,26 @@
 }
 h1 {
   color: black;
-  margin-left: 20px;
+  font-size: 20pt;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
 }
+
+h2 {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  font-size: 20pt;
+  text-align: center;
+}
+
 label{
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+}
+
+#form_container{
+  justify-content: center;
+  text-align: center  ;
+  display: flex;
 }
