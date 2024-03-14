@@ -28,7 +28,10 @@
     </div>
     <h1 id="points">0</h1>
     <div id="image_container">
-        <img id="game_image" style="width: 80vmin" src="images/1fbh111.png" alt="blue">
+        <div id = "game_images">
+            <img id="gi_front" src="images/1fbh111.png" alt="b">
+            <img id="gi_back" style="transform: rotateY(180deg)" src="images/1fbw111.png" alt="b">
+        </div>
     </div>
     <div id="game_answer_buttons_container">
         <button id="button_red" onclick="red()">Красные</button>
@@ -37,6 +40,7 @@
     </div>
     <div id="picts_history"></div>
     <div id="clicks_history"></div>
+    <div id="wins_history"></div>
 </div>
 
 </body>
