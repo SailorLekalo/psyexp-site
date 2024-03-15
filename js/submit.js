@@ -13,6 +13,9 @@ addEventListener("submit", (event) => {
         localStorage.setItem("name",name)
         localStorage.setItem("gender",gender)
         localStorage.setItem("age",age)
+        localStorage.setItem("picts_history", "")
+        localStorage.setItem("clicks_history", "")
+        localStorage.setItem("wins_history", "")
         event.preventDefault();
         window.location.replace("game.html");
     }

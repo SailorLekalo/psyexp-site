@@ -47,7 +47,7 @@ function red(){
     //При 0 или 1 волосы будут того же цвета, что и ведро.
     if (random === 0 || random === 1){
 
-        game_image_back.src = "images/"+changeCharFromBack(game_image_source,8,'w')
+        game_image_back.src = "../images/"+changeCharFromBack(game_image_source,8,'w')
 
         //Нажат красный, исходный цвет красный, открытый цвет красный
         if (source_color === "r"){
@@ -68,13 +68,13 @@ function red(){
 
         //Нажат красный, исходный цвет красный, открытый цвет синий
         if (source_color === "r"){
-            game_image_back.src = "images/"+changeCharFromBack(game_image_source,9,'b')
+            game_image_back.src = "../images/"+changeCharFromBack(game_image_source,9,'b')
             winhis.innerText += "|LOSE"
         }
 
         //Нажат красный, исходный цвет синий, открытый цвет красный
         if (source_color === "b"){
-            game_image_back.src = "images/"+changeCharFromBack(game_image_source,9,'r')
+            game_image_back.src = "../images/"+changeCharFromBack(game_image_source,9,'r')
             winhis.innerText += "|WIN"
             document.getElementById("points").innerText = points_int+1
         }
@@ -109,7 +109,7 @@ function blue(){
     //При 0 или 1 волосы будут того же цвета, что и ведро.
     if (random === 0 || random === 1){
 
-        game_image_back.src = "images/"+changeCharFromBack(game_image_source,8,'w')
+        game_image_back.src = "../images/"+changeCharFromBack(game_image_source,8,'w')
 
         //Нажат синий, исходный цвет красный, открытый цвет красный
         if (source_color === "r"){
@@ -131,14 +131,14 @@ function blue(){
 
         //Нажат синий, исходный цвет красный, открытый цвет синий
         if (source_color === "r"){
-            game_image_back.src = "images/"+changeCharFromBack(game_image_source,9,'b')
+            game_image_back.src = "../images/"+changeCharFromBack(game_image_source,9,'b')
             winhis.innerText += "|WIN"
             document.getElementById("points").innerText = points_int+1
         }
 
         //Нажат синий, исходный цвет синий, открытый цвет красный
         if (source_color === "b"){
-            game_image_back.src = "images/"+changeCharFromBack(game_image_source,9,'r')
+            game_image_back.src = "../images/"+changeCharFromBack(game_image_source,9,'r')
             winhis.innerText += "|LOSE"
         }
 
@@ -165,9 +165,9 @@ function next(){
             window.location.replace("outro.html");
         }
         else {
-            localStorage.setItem("picts_history", document.getElementById("picts_history").innerText)
-            localStorage.setItem("clicks_history", document.getElementById("clicks_history").innerText)
-            localStorage.setItem("wins_history", document.getElementById("wins_history").innerText)
+            localStorage.setItem("picts_history", localStorage.getItem("picts_history")   +  document.getElementById("picts_history").innerText)
+            localStorage.setItem("clicks_history",localStorage.getItem("clicks_history")  +  document.getElementById("clicks_history").innerText)
+            localStorage.setItem("wins_history",  localStorage.getItem("wins_history")    +  document.getElementById("wins_history").innerText)
             event.preventDefault();
             window.location.replace("ready.html");
         }
@@ -180,7 +180,7 @@ function next(){
         document.getElementById('progress_filler').style = 'width: ' + (rounds_total-rounds)/rounds_total*100 + '%'
         //Отнимает 1 от счётчика раундов и выбирает следующее из order значение.
         document.getElementById('rounds').innerText = rounds-1
-        document.getElementById('gi_front').src = "images/" + order[rounds]
+        document.getElementById('gi_front').src = "../images/" + order[rounds]
         document.getElementById('gi_front').alt = document.getElementById('gi_front').src[document.getElementById('gi_front').src.length-9]
         //"Крутит" карточку назад, скрытой стороной вверх
         document.getElementById('gi_front').style.transform = "rotateY(0deg)";

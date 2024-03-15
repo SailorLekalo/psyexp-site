@@ -11,6 +11,7 @@ addEventListener("submit", (event) => {
    var exam_wins_history   = localStorage.getItem("exam_wins_history")
    event.preventDefault();
    var link = "https://script.google.com/macros/s/AKfycbx0gzg0Io5SR63WFKw5VB5fvjIYb37-k2y9wVAXE4KehEAYpS9sDK_Pd_IWlY524OIp/exec?SSID=1fraAyItUjIWh4tfYdCDeyIMu4N4rMFe6ERoxVQjo-v0&DATA="+
-       cas+","+name+","+gender+","+age+","+picts_history+","+clicks_history+","+wins_history+","+exam_picts_history+","+exam_clicks_history+","+exam_wins_history
-   location.href(link)
+       cas+","+name+","+gender+","+age+","+picts_history+","+clicks_history+","+wins_history+","+exam_picts_history+","+exam_clicks_history+","+exam_wins_history+
+
+   window.location.replace(link)
 });
