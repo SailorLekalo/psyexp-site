@@ -42,7 +42,7 @@ label{
   text-align: center;
 }
 
-#form_container{
+#form_container, #form_one, #form_two{
   justify-content: center;
   text-align: center  ;
   display: flex;
