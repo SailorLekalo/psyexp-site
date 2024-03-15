@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <meta charset="utf-8">
+    <title>Психологический эксперимент</title>
+    <script src="../js/game.js"></script>
+
+</head>
+<body>
+
+<div id="instruction_container">
+    <div id="instruction_one">
+        <div>Перед вами последовательность людей либо в синем, либо в красном ведре. Оно скрывает волосы либо того же цвета, либо другого.</div>
+        <div><b>Подсказка:</b> в двух из трёх случаев (то есть, с вероятностью около 66,6%) волосы того же цвета, что и ведро.</div>
+        <div>Ваша задача — за 30 раундов проверить, верна эта подсказка или ложна. Выберите вариант, соответствующий предполагаемому цвету волос. Вы увидите, угадали или нет.</div>
+        <div>За каждое верное угадывание вам начисляются 10 баллов — их количество всегда можно посмотреть в правом верхнем углу экрана. После вашего ответа человек сразу вернётся в последовательность.</div>
+        <div>При желании вы можете перепроходить тестовый раунд сколько угодно раз.</div>
+        <div>Вверху посередине расположен счётчик баллов. В случае верного угадывания число баллов на счётчике загорается зелёным и увеличивается на десять единиц. В случае неправильного — ничего не происходит.</div>
+        <div>Над счётчиком располагается шкала прогресса.</div><br>
+    </div>
+    <div id="instruction_two">
+        <div>Перед вами последовательность людей либо в синем, либо в красном ведре. Оно скрывает волосы либо того же цвета, либо другого.</div>
+        <div>Ваша задача — за 30 раундов найти стратегию, позволяющую как можно чаще угадывать цвет волос. Выберите вариант, соответствующий предполагаемому цвету волос. Вы увидите, угадали или нет.</div>
+        <div>За каждое верное угадывание вам начисляются 10 баллов — их количество всегда можно посмотреть в правом верхнем углу экрана. После вашего ответа человек сразу вернётся в последовательность. Постарайтесь набрать как можно больше баллов.</div>
+        <div>При желании вы можете перепроходить тестовый раунд сколько угодно раз.</div>
+
+    </div>
+</div>
+
+<script>
+
+    if (localStorage.getItem("case") === '0'){
+        document.getElementById("instruction_one").style.display = "none"
+
+    }else {
+        document.getElementById("instruction_two").style.display = "none"
+    }
+</script>
+
+<div id="instruction_button_container">
+    <button id="change_instruction_state" onclick="change_instruction()">Скрыть инструкцию</button>
+</div>
+
+<div id="game_container">
+
+    <div id="progress_bar">
+        <div id="progress_filler" >Пройдено...</div>
+    </div>
+
+    <h1 id="points">0</h1>
+
+    <div id="image_container">
+        <div id = "game_images">
+            <img id="gi_front" src="../images/1fbh111.png" alt="b">
+            <img id="gi_back" style="transform: rotateY(180deg)" src="../images/1fbw111.png" alt="b">
+        </div>
+    </div>
+
+    <div id="game_answer_buttons_container">
+        <button id="button_red" onclick="red()">Красные</button>
+        <button id="button_blue" onclick="blue()">Синие</button>
+        <button id="button_next" style="display: none" onclick="next()">Следующая картинка</button>
+    </div>
+
+    <div id="rounds">30</div>
+    <div id="rounds_total">30</div>
+    <div id="stance">test</div>
+    <div id="picts_history"></div>
+    <div id="clicks_history"></div>
+    <div id="wins_history"></div>
+</div>
+
+</body>
+</html>

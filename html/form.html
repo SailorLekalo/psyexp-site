@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <meta charset="utf-8">
     <title>Психологический эксперимент</title>
-    <script src="submit.js"></script>
+    <script src="../js/submit.js"></script>
+
 </head>
 <body>
 
 <div id="instruction_container">
-    <div id="instruction">
+    <div id="instruction_one">
         <div style="text-align: center">
             Спасибо, что согласились поучаствовать в эксперименте. Вам предстоит сыграть в игру, за которую будут
             начисляться игровые баллы. В конце вы сможете сравнить свои результаты с результатами других участников и
@@ -26,7 +27,32 @@
         <br>
         <div style="text-align: center">Если вы решили сыграть повторно, введите возраст «100».</div>
     </div>
+    <div id="instruction_two">
+        <div style="text-align: center">
+            Спасибо, что согласились поучаствовать в эксперименте. Вам предстоит сыграть в игру, за которую будут
+            начисляться игровые баллы. В конце вы сможете сравнить свои результаты с результатами других участников и
+            посмотреть, насколько верна была ваша стратегия или насколько вы удачливее других. <br><br>Игра состоит из двух
+            этапов. Первый этап — тестовый. <br><br>Игра состоит из двух этапов. Первый этап — тестовый. Вы получите инструкцию к игре, а во время неё постараетесь определить, каким образом нужно решать задачу, чтобы получить за это баллы. Вы сможете сразу увидеть, насколько успешен каждый ваш шаг. <br><br>На втором
+            этапе начнётся сама игра. Теперь вы уже не сможете видеть, насколько успешно решаете задачу. В конце вы
+            ответите на два вопроса и увидите рейтинговую таблицу с результатами каждого участника и свой собственный
+            результат.
+        </div>
+        <br>
+        <div style="text-align: center">Приблизительное время прохождения: ___ минут.</div>
+        <br>
+        <div style="text-align: center">Если вы решили сыграть повторно, введите возраст «100».</div>
+    </div>
 </div>
+
+<script>
+    localStorage.setItem("case", Math.floor(Math.random() * 2))
+    if (localStorage.getItem("case") === '0'){
+        document.getElementById("instruction_one").style.display = "none"
+
+    }else {
+        document.getElementById("instruction_two").style.display = "none"
+    }
+</script>
 
 <h2>Заполните анкету</h2>
 <div id="form_container">

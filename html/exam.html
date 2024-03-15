@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <meta charset="utf-8">
     <title>Психологический эксперимент</title>
-    <script src="test_game.js"></script>
+    <script src="../js/game.js"></script>
 </head>
 <body>
 <div id="instruction_container">
@@ -24,13 +24,13 @@
 
 <div id="game_container">
     <div id="progress_bar">
-        <div id="progress_filler" style="width: 10%">Пройдено...</div>
+        <div id="progress_filler" >Пройдено...</div>
     </div>
     <h1 id="points">0</h1>
     <div id="image_container">
         <div id = "game_images">
-            <img id="gi_front" src="images/1fbh111.png" alt="b">
-            <img id="gi_back" style="transform: rotateY(180deg)" src="images/1fbw111.png" alt="b">
+            <img id="gi_front" src="../images/1fbh111.png" alt="b">
+            <img id="gi_back" style="transform: rotateY(180deg)" src="../images/1fbw111.png" alt="b">
         </div>
     </div>
     <div id="game_answer_buttons_container">
@@ -38,6 +38,9 @@
         <button id="button_blue" onclick="blue()">Синие</button>
         <button id="button_next" style="display: none" onclick="next()">Следующая картинка</button>
     </div>
+    <div id="rounds">50</div>
+    <div id="rounds_total">50</div>
+    <div id="stance">exam</div>
     <div id="picts_history"></div>
     <div id="clicks_history"></div>
     <div id="wins_history"></div>

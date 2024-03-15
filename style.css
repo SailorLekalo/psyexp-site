@@ -10,13 +10,14 @@
   justify-content: center;
   display: flex;
 }
+
 @media (max-width: 500px){
   #instruction_container {
     font-size: 3vmin;
   }
 }
 
-#instruction{
+#instruction_one, #instruction_two{
   width: 80%;
   max-width: 800px;
 }
@@ -64,6 +65,7 @@ label{
   padding-left: 10px;
   background-color: skyblue;
   display: flex;
+  width: 10%
 }
 
 #game_answer_buttons_container{
@@ -82,6 +84,7 @@ label{
   justify-content: center;
   align-items: center;
 }
+
 #game_images {
   width: 80vmin;
   height: 80vmin;
@@ -89,6 +92,7 @@ label{
   perspective: 1000px;
   border: 1px solid #fff;
 }
+
 #gi_front, #gi_back {
   position: absolute;
   width: 100%;

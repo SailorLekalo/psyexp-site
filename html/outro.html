@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <meta charset="utf-8">
+    <title>Психологический эксперимент</title>
+    <script src="../js/outro_submit.js"></script>
+</head>
+<body>
+
+<div id="instruction_container">
+    <div id="instruction">
+        <div style="text-align: center">
+            Спасибо, что согласились поучаствовать в эксперименте. Вам предстоит сыграть в игру, за которую будут
+            начисляться игровые баллы. В конце вы сможете сравнить свои результаты с результатами других участников и
+            посмотреть, насколько верна была ваша стратегия или насколько вы удачливее других. <br><br>Игра состоит из двух
+            этапов. Первый этап — тестовый. <br><br>Вы получите инструкцию к игре и подсказку, как нужно решать задачу, чтобы
+            набрать как можно больше баллов. Во время игры вы попробуете сыграть таким образом, чтобы проверить,
+            истинной была подсказка или ложной. Вы сможете сразу увидеть, насколько успешен каждый ваш шаг. <br><br>На втором
+            этапе начнётся сама игра. Теперь вы уже не сможете видеть, насколько успешно решаете задачу. В конце вы
+            ответите на два вопроса и увидите рейтинговую таблицу с результатами каждого участника и свой собственный
+            результат.
+        </div>
+        <br>
+        <div style="text-align: center">Приблизительное время прохождения: ___ минут.</div>
+        <br>
+        <div style="text-align: center">Если вы решили сыграть повторно, введите возраст «100».</div>
+    </div>
+</div>
+
+
+
+<h2>Заполните анкету</h2>
+<div id="form_one">
+    <form>
+        <label for="podskaz">Была ли верна подсказка?</label><br>
+        <input type="text" id="podskaz"><br>
+
+        <label for="podskaz_use">Если подсказка была верна, пользовались ли вы ею?</label><br>
+        <input type="text" id="podskaz_use"><br>
+
+        <label for="fake">Если подсказка была ложной, _______:</label><br>
+        <input type="text" id="fake"><br>
+
+        <label for="other_strat">Удалось ли вам найти ещё какую-нибудь стратегию?</label><br>
+        <input type="text" id="other_strat"><br>
+
+        <input type="submit" id="submit_form_one" onsubmit="submit_one()"><br>
+    </form>
+</div>
+
+<div id="form_two">
+    <form>
+        <label for="which_strat">Какую стратегию вам удалось обнаружить?</label><br>
+        <input type="text" id="which_strat"><br>
+
+        <label for="use_strat">Пользовались ли вы обнаруженной стратегией? Если нет, то почему?</label><br>
+        <input type="text" id="use_strat"><br>
+        <input type="submit" id="submit_form_two" onsubmit="submit_two()"><br>
+    </form>
+</div>
+
+<script>
+    if (localStorage.getItem("case") === '0'){
+        document.getElementById("form_one").style.display = "none"
+
+    }else {
+        document.getElementById("form_two").style.display = "none"
+    }
+</script>
+</body>
+</html>

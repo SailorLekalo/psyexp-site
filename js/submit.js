@@ -10,7 +10,6 @@ addEventListener("submit", (event) => {
     //иначе мы заносим все значения в localStorage и перебрасываем на страницу с игрой.
     else {
         console.log("all values given") //DEBUG STRING, DELETE
-
         localStorage.setItem("name",name)
         localStorage.setItem("gender",gender)
         localStorage.setItem("age",age)
