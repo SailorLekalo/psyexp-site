@@ -78,12 +78,12 @@ function red(){
             winhis.innerText += "|WIN"
             document.getElementById("points").innerText = points_int+1
         }
-
-
     }
 
-    game_image.style.transform = "rotateY(180deg)";
-    game_image_back.style.transform = "rotateY(360deg)";
+    if (document.getElementById('stance').innerText==='test'){
+        game_image.style.transform = "rotateY(180deg)";
+        game_image_back.style.transform = "rotateY(360deg)";
+    }
 
     //показать другой набор кнопок.
     document.getElementById("button_red").style.display = "none"
@@ -144,9 +144,10 @@ function blue(){
 
 
     }
-
-    game_image.style.transform = "rotateY(180deg)";
-    game_image_back.style.transform = "rotateY(360deg)";
+    if (document.getElementById('stance').innerText==='test'){
+        game_image.style.transform = "rotateY(180deg)";
+        game_image_back.style.transform = "rotateY(360deg)";
+    }
 
     //показать другой набор кнопок.
     document.getElementById("button_red").style.display = "none"
@@ -182,9 +183,12 @@ function next(){
         document.getElementById('rounds').innerText = rounds-1
         document.getElementById('gi_front').src = "../images/" + order[rounds]
         document.getElementById('gi_front').alt = document.getElementById('gi_front').src[document.getElementById('gi_front').src.length-9]
+
         //"Крутит" карточку назад, скрытой стороной вверх
-        document.getElementById('gi_front').style.transform = "rotateY(0deg)";
-        document.getElementById('gi_back').style.transform = "rotateY(180deg)";
+        if (document.getElementById('stance').innerText==='test'){
+            document.getElementById('gi_front').style.transform = "rotateY(0deg)";
+            document.getElementById('gi_back').style.transform = "rotateY(180deg)";
+        }
 
         //Показывает игровые кнопки.
         document.getElementById("button_red").style.display = "inline"

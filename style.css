@@ -5,7 +5,7 @@
 
 #instruction_container, #instruction_button_container {
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   justify-content: center;
   display: flex;
@@ -73,6 +73,10 @@ label{
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+}
+#game_answer_buttons_container button{
+
+  margin-right: 15px;
 }
 
 #image_container {
