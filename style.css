@@ -110,3 +110,8 @@ label{
   backface-visibility: hidden;
   background-color: #fff;
 }
+
+#game_answer_buttons_container {
+  display: flex;
+  justify-content: center;
+}

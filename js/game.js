@@ -51,7 +51,7 @@ function red(){
 
         //Нажат красный, исходный цвет красный, открытый цвет красный
         if (source_color === "r"){
-            document.getElementById("points").innerText = points_int+1
+            document.getElementById("points").innerText = points_int+10
             winhis.innerText += "|WIN"
         }
 
@@ -76,7 +76,7 @@ function red(){
         if (source_color === "b"){
             game_image_back.src = "../images/"+changeCharFromBack(game_image_source,9,'r')
             winhis.innerText += "|WIN"
-            document.getElementById("points").innerText = points_int+1
+            document.getElementById("points").innerText = points_int+10
         }
     }
 
@@ -119,7 +119,7 @@ function blue(){
 
         //Нажат синий, исходный цвет синий, открытый цвет синий
         if (source_color === "b"){
-            document.getElementById("points").innerText = points_int+1
+            document.getElementById("points").innerText = points_int+10
             winhis.innerText += "|WIN"
         }
 
@@ -133,7 +133,7 @@ function blue(){
         if (source_color === "r"){
             game_image_back.src = "../images/"+changeCharFromBack(game_image_source,9,'b')
             winhis.innerText += "|WIN"
-            document.getElementById("points").innerText = points_int+1
+            document.getElementById("points").innerText = points_int+10
         }
 
         //Нажат синий, исходный цвет синий, открытый цвет красный
@@ -157,11 +157,16 @@ function blue(){
 
 function next(){
 
+    var rounds_total = parseInt(document.getElementById('rounds_total').innerText)
+    localStorage.setItem("pts", Math.floor(parseInt((document.getElementById("points").innerText)/10)/rounds_total*100))
+
     if (document.getElementById('rounds').innerText==='0'){
         if (document.getElementById('stance').innerText==='exam'){
+
             localStorage.setItem("exam_picts_history", document.getElementById("picts_history").innerText)
             localStorage.setItem("exam_clicks_history", document.getElementById("clicks_history").innerText)
             localStorage.setItem("exam_wins_history", document.getElementById("wins_history").innerText)
+
             event.preventDefault();
             window.location.replace("outro.html");
         }
@@ -169,13 +174,14 @@ function next(){
             localStorage.setItem("picts_history", localStorage.getItem("picts_history")   +  document.getElementById("picts_history").innerText)
             localStorage.setItem("clicks_history",localStorage.getItem("clicks_history")  +  document.getElementById("clicks_history").innerText)
             localStorage.setItem("wins_history",  localStorage.getItem("wins_history")    +  document.getElementById("wins_history").innerText)
+
             event.preventDefault();
             window.location.replace("ready.html");
         }
     }
 
     else {
-        var rounds_total = parseInt(document.getElementById('rounds_total').innerText)
+
         var rounds = parseInt(document.getElementById('rounds').innerText)
 
         document.getElementById('progress_filler').style = 'width: ' + (rounds_total-rounds)/rounds_total*100 + '%'
