@@ -9,34 +9,81 @@
 <body>
 
 
+
 <h2>Заполните анкету</h2>
-<div id="form_one">
+
+<div id="form_container">
     <form>
-        <label for="podskaz">Была ли верна подсказка?</label><br>
-        <input type="text" id="podskaz"><br>
+        <div id="form_one">
+            <fieldset>
+                <legend>Подсказка была...</legend>
+                <div>
+                    <input type="radio" id="yes" name="podskaz" value="YES" required/>
+                    <label for="red">...верной</label><br>
+                    <input type="radio" id="no" name="podskaz" value="NO" required/>
+                    <label for="blue">...ложной</label><br>
+                    <input type="radio" id="UNDEF" name="podskaz" value="UNDEF" required checked/>
+                </div>
+            </fieldset>
 
-        <label for="podskaz_use">Если подсказка была верна, пользовались ли вы ею?</label><br>
-        <input type="text" id="podskaz_use"><br>
+            <label for="podskaz_use">Если подсказка была верной, пользовались ли вы ею?</label><br>
+            <input type="text" id="podskaz_use" size="70"><br>
 
-        <label for="fake">Если подсказка была ложной, _______:</label><br>
-        <input type="text" id="fake"><br>
+            <label for="fake">Если подсказка была ложной, как быстро вы это поняли?</label><br>
+            <input type="text" id="fake" size="70"><br>
 
-        <label for="other_strat">Удалось ли вам найти ещё какую-нибудь стратегию?</label><br>
-        <input type="text" id="other_strat"><br>
+            <label for="other_strat">Какую еще стратегию вам удалось обнаружить?</label><br>
+            <input type="text" id="other_strat" size="70"><br>
+        </div>
 
-        <input type="submit" id="submit_form_one" onsubmit="submit_one()"><br>
+        <div id="form_two">
+            <label for="which_strat">Какую стратегию вам удалось обнаружить?</label><br>
+            <input type="text" id="which_strat" size="70" ><br>
+            <label for="use_strat">Пользовались ли вы обнаруженной стратегией? Если нет, то почему?</label><br>
+            <input type="text" id="use_strat" size="70" ><br>
+        </div>
+
+        <br>
+        <fieldset>
+            <legend>На каких людях сиреневая обувь встречалась чаще</legend>
+            <div>
+                <input type="radio" id="red" name="color" value="red" required/>
+                <label for="red">На красноволосых</label><br>
+                <input type="radio" id="blue" name="color" value="blue" required/>
+                <label for="blue">На синеволосых</label><br>
+                <input type="radio" id="same" name="color" value="same" required/>
+                <label for="same">На тех и на тех одинаково часто</label><br>
+            </div>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>В какой половине игрового этапа было заметно больше красноволосых мальчиков?</legend>
+            <div>
+                <input type="radio" id="first" name="half" value="first" required/>
+                <label for="red">В первой</label><br>
+                <input type="radio" id="second" name="half" value="second" required/>
+                <label for="blue">Во второй</label><br>
+                <input type="radio" id="porovnu" name="half" value="porovnu" required/>
+                <label for="same">В обоих половинах поровну</label><br>
+            </div>
+        </fieldset><br>
+        <br>
+        <label for="freq">В каком проценте случаев цвет ведра и волос совпадал?</label><br>
+        <input type="range" id="freq" name="freq" min="0" max="100" value="50" step="5" style="width: 50%" oninput="this.nextElementSibling.value = this.value"  required/>
+        <output>50</output><br>
+        <br>
+        <br>
+        <input type="submit" id="submit_form_two" onsubmit="submit_two()"><br>
     </form>
 </div>
 
-<div id="form_two">
-    <form>
-        <label for="which_strat">Какую стратегию вам удалось обнаружить?</label><br>
-        <input type="text" id="which_strat"><br>
+<div id="instruction_button_container">
+    <button id="change_instruction_state" onclick="change_instruction()">Скрыть рейтинг</button>
+</div>
 
-        <label for="use_strat">Пользовались ли вы обнаруженной стратегией? Если нет, то почему?</label><br>
-        <input type="text" id="use_strat"><br>
-        <input type="submit" id="submit_form_two" onsubmit="submit_two()"><br>
-    </form>
+<div id="instruction_container">
+    <h2 id="placeholder">Здесь появится рейтинг, когда вы заполните анкету.</h2>
+    <h2 id="rating_place" style="display:none"></h2>
 </div>
 
 <script>
@@ -45,6 +92,7 @@
 
     }else {
         document.getElementById("form_two").style.display = "none"
+        document.getElementById("UNDEF").remove()
     }
 </script>
 </body>
